@@ -5,13 +5,12 @@ createApp({
     return {
       year: new Date().getFullYear(),
       navigation: [
-        { label: 'Profile', href: '#profile' }, { label: 'Skills', href: '#skills' },
-        { label: 'Experience', href: '#experience' }, { label: 'Projects', href: '#projects' },
-        { label: 'Education', href: '#education' }, { label: 'Contact', href: '#contact' }
+        { label: 'Home', href: '#home' }, { label: 'Work', href: '#projects' },
+        { label: 'About', href: '#about' }, { label: 'Contact', href: '#contact' }
       ],
       profileCards: [
         { icon: 'fa-solid fa-cloud', title: 'Cloud & engineering', description: 'Java development, Google Cloud Platform, integration, debugging, testing, and application maintenance.' },
-        { icon: 'fa-solid fa-headset', title: 'Support & operations', description: 'Application and systems support, troubleshooting, help desk service, and end-user assistance.' }
+        { icon: 'fa-solid fa-headset', title: 'IT support & hardware', description: 'Experienced IT technician with hands-on computer hardware troubleshooting, systems support, help desk service, and end-user assistance.' }
       ],
       skillGroups: [
         { icon: 'fa-solid fa-code', title: 'Programming', center: 'CODE', skills: ['Java', 'JavaFX', 'Dart', 'PHP', 'VB.NET', 'VB6', 'Python', 'Apps Script', 'Kotlin', 'Flutter'], outerIcons: [{ name: 'Java', image: './assets/icons/java.svg' }, { name: 'Dart', image: './assets/icons/dart.svg' }], innerIcons: [{ name: 'Python', image: './assets/icons/python.svg' }, { name: 'Kotlin', image: './assets/icons/kotlin.svg' }] },
@@ -40,6 +39,71 @@ createApp({
     }
   },
   mounted() {
+    this.siteLoader = document.querySelector('#siteLoader');
+    this.dismissSiteLoader = () => {
+      const elapsed = performance.now() - (window.siteLoaderStartedAt || performance.now());
+      this.siteLoaderTimer = window.setTimeout(() => {
+        this.siteLoader?.classList.add('is-hidden');
+        this.siteLoader?.addEventListener('transitionend', () => this.siteLoader?.remove(), { once: true });
+      }, Math.max(0, 550 - elapsed));
+    };
+    if (document.readyState === 'complete') {
+      this.dismissSiteLoader();
+    } else {
+      window.addEventListener('load', this.dismissSiteLoader, { once: true });
+    }
+
+    this.handleNavigationScroll = () => {
+      const navbar = document.querySelector('.navbar');
+      if (!navbar) return;
+      const isCompact = navbar.classList.contains('is-compact');
+      navbar.classList.toggle('is-compact', isCompact ? window.scrollY > 24 : window.scrollY > 72);
+    };
+    window.addEventListener('scroll', this.handleNavigationScroll, { passive: true });
+    this.handleNavigationScroll();
+
+    this.contactForm = document.querySelector('#contactForm');
+    this.contactFormStatus = document.querySelector('#contactFormStatus');
+    this.contactFormHandler = async (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      const name = formData.get('name').trim();
+      const email = formData.get('email').trim();
+      const message = formData.get('message').trim();
+      const submitButton = this.contactForm.querySelector('[type="submit"]');
+      const originalButtonContent = submitButton.innerHTML;
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending…';
+      this.contactFormStatus.textContent = 'Sending your message…';
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/jovancasilang_20@hotmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            name,
+            email,
+            message,
+            _replyto: email,
+            _subject: `Portfolio inquiry from ${name}`
+          })
+        });
+        const result = await response.json();
+        if (!response.ok || (result.success !== true && result.success !== 'true')) {
+          throw new Error(result.message || 'The message could not be sent.');
+        }
+
+        this.contactForm.reset();
+        this.contactFormStatus.textContent = 'Thanks! Your message has been sent.';
+      } catch (error) {
+        this.contactFormStatus.textContent = 'Unable to send right now. Please try again or email me directly.';
+      } finally {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonContent;
+      }
+    };
+    this.contactForm?.addEventListener('submit', this.contactFormHandler);
+
     const targets = [...document.querySelectorAll('[data-reveal]')];
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -87,5 +151,9 @@ createApp({
   beforeUnmount() {
     window.clearInterval(this.skillRotationTimer);
     this.revealObserver?.disconnect();
+    this.contactForm?.removeEventListener('submit', this.contactFormHandler);
+    window.removeEventListener('load', this.dismissSiteLoader);
+    window.clearTimeout(this.siteLoaderTimer);
+    window.removeEventListener('scroll', this.handleNavigationScroll);
   }
 }).mount('#app');
