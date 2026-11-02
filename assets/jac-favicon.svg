@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="17" fill="#246b58"/>
+  <path d="M8 16h48" fill="none" stroke="#a8d7be" stroke-linecap="round" stroke-width="2" opacity=".8"/>
+  <text x="32" y="43" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="700" letter-spacing="-1.6" text-anchor="middle">JAC</text>
+  <circle cx="53" cy="51" r="3" fill="#a8d7be"/>
+</svg>
