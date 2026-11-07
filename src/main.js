@@ -9,14 +9,15 @@ createApp({
         { label: 'About', href: '#about' }, { label: 'Contact', href: '#contact' }
       ],
       profileCards: [
-        { icon: 'fa-solid fa-cloud', title: 'Cloud & engineering', description: 'Java development, Google Cloud Platform, integration, debugging, testing, and application maintenance.' },
-        { icon: 'fa-solid fa-headset', title: 'IT support & hardware', description: 'Experienced IT technician with hands-on computer hardware troubleshooting, systems support, help desk service, and end-user assistance.' }
+        { icon: 'fa-solid fa-cloud', title: 'Software & application support', description: 'Java and Google Cloud Platform development, testing, debugging, system integration, application maintenance, and Agile delivery.' },
+        { icon: 'fa-solid fa-headset', title: 'IT & systems support', description: 'Hardware, software, and network troubleshooting; Windows and business software installation; help desk and remote support; and end-user assistance.' }
       ],
       skillGroups: [
-        { icon: 'fa-solid fa-code', title: 'Programming', center: 'CODE', skills: ['Java', 'JavaFX', 'Dart', 'PHP', 'VB.NET', 'VB6', 'Python', 'Apps Script', 'Kotlin', 'Flutter'], outerIcons: [{ name: 'Java', image: './assets/icons/java.svg' }, { name: 'Dart', image: './assets/icons/dart.svg' }], innerIcons: [{ name: 'Python', image: './assets/icons/python.svg' }, { name: 'Kotlin', image: './assets/icons/kotlin.svg' }] },
-        { icon: 'fa-solid fa-window-maximize', title: 'Web & mobile', center: 'WEB', skills: ['HTML5', 'CSS', 'JavaScript', 'Android', 'Joomla'], outerIcons: [{ name: 'HTML5', image: './assets/icons/html5.svg' }, { name: 'CSS3', image: './assets/icons/css3.svg' }], innerIcons: [{ name: 'JavaScript', image: './assets/icons/javascript.svg' }, { name: 'Android', image: './assets/icons/android.svg' }] },
-        { icon: 'fa-solid fa-cloud', title: 'Cloud & data', center: 'DATA', skills: ['Google Cloud', 'Oracle Database', 'Database apps'], outerIcons: [{ name: 'Google Cloud', image: './assets/icons/google-cloud.svg' }], innerIcons: [{ name: 'Oracle', image: './assets/icons/oracle.svg' }] },
-        { icon: 'fa-solid fa-screwdriver-wrench', title: 'Tools & support', center: 'TOOLS', skills: ['Android Studio', 'NetBeans', 'Eclipse', 'Visual Studio', 'phpMyAdmin', 'WAMP', 'XAMPP', 'AnyDesk', 'TeamViewer'], outerIcons: [{ name: 'Android Studio', image: './assets/icons/android-studio.svg' }, { name: 'Visual Studio', image: './assets/icons/visual-studio.svg' }], innerIcons: [{ name: 'AnyDesk', image: './assets/icons/anydesk.svg' }, { name: 'TeamViewer', image: './assets/icons/teamviewer.svg' }] }
+        { icon: 'fa-solid fa-code', title: 'Programming', center: 'CODE', skills: ['Java', 'JavaFX', 'PHP', 'VB.NET', 'VB6', 'Python', 'Kotlin', 'Dart', 'Flutter', 'Apps Script', 'Object-oriented programming'], outerIcons: [{ name: 'Java', image: './assets/icons/java.svg' }, { name: 'Dart', image: './assets/icons/dart.svg' }], innerIcons: [{ name: 'Python', image: './assets/icons/python.svg' }, { name: 'Kotlin', image: './assets/icons/kotlin.svg' }] },
+        { icon: 'fa-solid fa-window-maximize', title: 'Web & mobile', center: 'WEB', skills: ['Android programming', 'Joomla', 'HTML5', 'CSS', 'JavaScript'], outerIcons: [{ name: 'HTML5', image: './assets/icons/html5.svg' }, { name: 'CSS3', image: './assets/icons/css3.svg' }], innerIcons: [{ name: 'JavaScript', image: './assets/icons/javascript.svg' }, { name: 'Android', image: './assets/icons/android.svg' }] },
+        { icon: 'fa-solid fa-cloud', title: 'Cloud & data', center: 'DATA', skills: ['Google Cloud Platform (GCP)', 'Oracle Database', 'Database applications'], outerIcons: [{ name: 'Google Cloud', image: './assets/icons/google-cloud.svg' }], innerIcons: [{ name: 'Oracle', image: './assets/icons/oracle.svg' }] },
+        { icon: 'fa-solid fa-laptop-code', title: 'Development tools', center: 'TOOLS', skills: ['AI tools for program development', 'Microsoft Word', 'Microsoft Excel', 'Microsoft PowerPoint', 'AntiGravity', 'Android Studio', 'NetBeans', 'Eclipse', 'jCreator', 'Microsoft Visual Studio', 'phpMyAdmin', 'WAMP', 'XAMPP'], outerIcons: [{ name: 'Android Studio', image: './assets/icons/android-studio.svg' }, { name: 'Visual Studio', image: './assets/icons/visual-studio.svg' }], innerIcons: [{ name: 'Java', image: './assets/icons/java.svg' }, { name: 'Google Cloud', image: './assets/icons/google-cloud.svg' }] },
+        { icon: 'fa-solid fa-screwdriver-wrench', title: 'IT support & operations', center: 'SUPPORT', skills: ['Application & system support', 'Technical troubleshooting', 'PC reformatting', 'Hardware & software installation', 'Windows installation', 'Network troubleshooting', 'Help desk support', 'Remote technical support', 'End-user support', 'AnyDesk', 'TeamViewer', 'Data backup & transfer', 'Technical documentation', 'Issue resolution', 'Customer service', 'Agile methodologies', 'Cross-functional collaboration', 'Technical problem solving'], outerIcons: [{ name: 'AnyDesk', image: './assets/icons/anydesk.svg' }, { name: 'TeamViewer', image: './assets/icons/teamviewer.svg' }], innerIcons: [{ name: 'Visual Studio', image: './assets/icons/visual-studio.svg' }, { name: 'Android Studio', image: './assets/icons/android-studio.svg' }] }
       ],
       projects: [
         { title: 'Query Manager FX', image: './assets/query-manager.png', alt: 'Query Manager FX database browser and query editor', description: 'A database utility for running queries and managing records with insert, update, and delete operations.', tags: ['JavaFX', 'SQL', 'Database tools'] },
@@ -107,6 +108,15 @@ createApp({
     const targets = [...document.querySelectorAll('[data-reveal]')];
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+    this.skillsStackShell = document.querySelector('.skills-stack-shell');
+    this.pauseSkillRotationOnFocus = () => this.pauseSkillRotation();
+    this.resumeSkillRotationAfterFocus = (event) => {
+      if (!this.skillsStackShell?.contains(event.relatedTarget)) this.resumeSkillRotation();
+    };
+    this.skillsStackShell?.addEventListener('mouseenter', this.pauseSkillRotationOnFocus);
+    this.skillsStackShell?.addEventListener('mouseleave', this.resumeSkillRotationOnFocus);
+    this.skillsStackShell?.addEventListener('focusin', this.pauseSkillRotationOnFocus);
+    this.skillsStackShell?.addEventListener('focusout', this.resumeSkillRotationAfterFocus);
     if (this.skillRotationAllowed) this.startSkillRotation();
 
     if (reduceMotion || !('IntersectionObserver' in window)) {
@@ -140,9 +150,18 @@ createApp({
         this.activeSkillIndex = (this.activeSkillIndex + 1) % this.skillGroups.length;
       }, 2700);
     },
+    pauseSkillRotation() {
+      window.clearInterval(this.skillRotationTimer);
+      this.skillRotationTimer = null;
+    },
+    resumeSkillRotation() {
+      if (!this.skillRotationAllowed || this.skillRotationTimer) return;
+      if (this.skillsStackShell?.matches(':hover') || this.skillsStackShell?.contains(document.activeElement)) return;
+      this.startSkillRotation();
+    },
     navigateSkills(direction) {
       this.activeSkillIndex = (this.activeSkillIndex + direction + this.skillGroups.length) % this.skillGroups.length;
-      if (this.skillRotationAllowed) this.startSkillRotation();
+      this.resumeSkillRotation();
     },
     selectProject(index) {
       this.activeProjectIndex = index;
@@ -155,5 +174,9 @@ createApp({
     window.removeEventListener('load', this.dismissSiteLoader);
     window.clearTimeout(this.siteLoaderTimer);
     window.removeEventListener('scroll', this.handleNavigationScroll);
+    this.skillsStackShell?.removeEventListener('mouseenter', this.pauseSkillRotationOnFocus);
+    this.skillsStackShell?.removeEventListener('mouseleave', this.resumeSkillRotationOnFocus);
+    this.skillsStackShell?.removeEventListener('focusin', this.pauseSkillRotationOnFocus);
+    this.skillsStackShell?.removeEventListener('focusout', this.resumeSkillRotationAfterFocus);
   }
 }).mount('#app');

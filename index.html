@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f5f1">
-  <meta name="description" content="Jovan Ali P. Casilang — IT and software engineering professional">
-  <title>Jovan Ali P. Casilang — IT &amp; Software Engineering</title>
+  <meta name="description" content="Jovan Ali P. Casilang — IT professional with 11+ years in application support, software development, and systems support.">
+  <title>Jovan Ali P. Casilang — IT &amp; Application Support</title>
   <link rel="icon" type="image/svg+xml" href="./assets/jac-favicon.svg">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="./assets/tailwind.css" rel="stylesheet">
@@ -13,8 +13,10 @@
   <style>
     :root { --ink:#182522; --muted:#66716d; --paper:#f4f5f1; --line:#dce2dc; --accent:#246b58; --soft:#e7eee9; --surface:#fff; --ease-out:cubic-bezier(.2,.7,.2,1); }
     * { box-sizing:border-box }
-    html { scroll-behavior:smooth; scroll-padding-top:5.5rem }
+    html { scroll-behavior:smooth; scroll-padding-top:5.5rem; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale }
     body { background:var(--paper); color:var(--ink); font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; letter-spacing:0; line-height:1.55 }
+    h1,h2,h3 { text-wrap:balance }
+    p,li,figcaption,blockquote { text-wrap:pretty }
     .navbar { padding-right:0; padding-left:0; background:rgba(246,245,241,.82); border-bottom:1px solid rgba(222,223,216,.8); backdrop-filter:blur(18px) saturate(150%); -webkit-backdrop-filter:blur(18px) saturate(150%); transition:box-shadow .3s ease,background-color .3s ease,border-color .3s ease }
     .navbar .container { position:relative; width:100%; max-width:100%; padding-right:clamp(1rem,4vw,4rem); padding-left:clamp(1rem,4vw,4rem); transition:width .38s var(--ease-out),max-width .38s var(--ease-out),padding .38s var(--ease-out),border-radius .38s var(--ease-out),background-color .3s ease,box-shadow .3s ease }
     .navbar.is-compact { border-color:transparent; background:transparent; box-shadow:none; backdrop-filter:none; -webkit-backdrop-filter:none }
@@ -26,7 +28,7 @@
     .navbar-menu .nav-link { display:inline-flex; align-items:center; justify-content:center; padding:.55rem .8rem; border:1px solid transparent; border-radius:999px; color:var(--muted); font-size:.85rem; font-weight:650; line-height:1; text-decoration:none; white-space:nowrap; transition:color .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease,padding .25s var(--ease-out),transform .2s var(--ease-out) }
     .navbar-menu .nav-link:hover,.navbar-menu .nav-link:focus-visible { transform:translateY(-1px); border-color:var(--line); background:#fff; color:var(--accent); box-shadow:0 4px 12px rgba(24,37,34,.07) }
     .navbar-menu .nav-link:focus-visible { outline:3px solid rgba(36,107,88,.25); outline-offset:2px }
-    .navbar-menu .nav-link:active { transform:scale(.97); transition-duration:.1s }
+    .navbar-menu .nav-link:active { transform:scale(.96); transition-duration:.1s }
     .navbar.is-compact .navbar-menu { flex:1; justify-content:center; gap:.2rem; margin-left:1rem }
     .navbar.is-compact .navbar-menu .nav-link { padding:.42rem .58rem }
     .site-loader { position:fixed; z-index:2000; inset:0; display:grid; place-items:center; background:var(--paper); opacity:1; visibility:visible; transition:opacity .42s ease,visibility .42s ease }
@@ -38,9 +40,12 @@
     .site-loader-track::after { content:""; position:absolute; inset:0 auto 0 0; width:42%; border-radius:inherit; background:var(--accent); animation:loader-progress 1.15s ease-in-out infinite }
     @keyframes loader-breathe { 50% { opacity:.45; transform:translateY(-3px) } }
     @keyframes loader-progress { from { transform:translateX(-110%) } to { transform:translateX(350%) } }
-    .about-role { display:grid; gap:.25rem; margin-top:1.6rem; padding:1rem 1.1rem; border:1px solid var(--line); border-radius:12px; background:rgba(255,255,255,.72) }
-    .about-role .aside-label { font-size:.7rem; letter-spacing:.1em }
-    .about-role .aside-value { font-size:.98rem }
+    .about-role { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-top:1.15rem; padding:1rem 1.1rem; border:1px solid rgba(36,107,88,.12); border-radius:16px; background:linear-gradient(110deg,rgba(255,255,255,.95),rgba(231,238,233,.72)); box-shadow:0 8px 24px rgba(24,37,34,.045) }
+    .about-role-copy { display:grid; min-width:0; gap:.2rem }
+    .about-role .aside-label { font-size:.66rem; font-weight:750; letter-spacing:.12em }
+    .about-role .aside-value { font-size:.95rem; font-weight:700; line-height:1.3 }
+    .about-role .small { color:var(--muted)!important; font-size:.75rem }
+    .about-role-mark { display:grid; width:42px; height:42px; flex:none; place-items:center; border:1px solid rgba(36,107,88,.1); border-radius:13px; background:#fff; box-shadow:0 4px 12px rgba(24,37,34,.05); color:var(--accent) }
     .hero { position:relative; padding:7.5rem 0 6.5rem; overflow:hidden; background:radial-gradient(ellipse at 86% 12%,rgba(36,107,88,.085),transparent 36%),linear-gradient(180deg,rgba(255,255,255,.58),transparent 78%) }
     .service-marquee { overflow:hidden; padding:.85rem 0 1rem; background:transparent }
     .marquee-row { overflow:hidden; white-space:nowrap }
@@ -61,29 +66,48 @@
     .hero-button-primary:hover { background:#174c3e; color:#fff }
     .hero-button-secondary { color:var(--ink); border-color:var(--line); background:rgba(255,255,255,.48) }
     .hero-button-secondary:hover { border-color:#b8c9bd; color:var(--accent); background:#fff }
-    .hero-button:active { transform:scale(.98) }
+    .hero-button:active { transform:scale(.96) }
     .hero-button:focus-visible { outline:3px solid rgba(36,107,88,.35); outline-offset:3px }
     .hero-stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; max-width:620px; margin-top:2.5rem }
     .hero-stat { padding-top:.9rem; border-top:1px solid var(--line) }
     .hero-stat strong { display:block; color:var(--accent); font-size:clamp(1.35rem,2.5vw,1.8rem); line-height:1; letter-spacing:-.05em; font-weight:720 }
     .hero-stat span { display:block; margin-top:.45rem; color:var(--muted); font-size:.78rem; line-height:1.35 }
-    .hero-aside { background:var(--soft); border:1px solid rgba(36,107,88,.08); border-radius:8px; padding:1rem; display:flex; flex-direction:column; box-shadow:0 18px 50px rgba(24,37,34,.07) }
-    .profile-photo { display:block; width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center 28%; border-radius:3px; margin-bottom:1.25rem }
+    .hero-aside { background:var(--soft); border:1px solid rgba(36,107,88,.08); border-radius:20px; padding:1rem; display:flex; flex-direction:column; box-shadow:0 18px 50px rgba(24,37,34,.07) }
+    .about-portrait-wrap { position:relative; isolation:isolate; width:min(100%,420px); margin:0 auto; padding:.6rem .85rem 1rem .35rem }
+    .about-portrait-wrap::before { content:""; position:absolute; z-index:-1; inset:1.25rem 0 1.2rem 1.35rem; border:1px solid rgba(36,107,88,.2); border-radius:30px; background:linear-gradient(145deg,rgba(231,238,233,.88),rgba(255,255,255,.35)); transform:rotate(3deg) }
+    .about-profile { position:relative; aspect-ratio:4/5; overflow:hidden; border:1px solid rgba(24,37,34,.08); border-radius:24px; background:var(--soft); box-shadow:0 22px 48px rgba(24,37,34,.16) }
+    .about-profile::after { content:""; position:absolute; inset:42% 0 0; background:linear-gradient(180deg,transparent,rgba(10,29,24,.78)); pointer-events:none }
+    .about-photo,.project-image,.project-selector-image img { outline:1px solid oklch(0 0 0 / 0.1); outline-offset:-1px }
+    .about-photo { display:block; width:100%; height:100%; object-fit:cover; object-position:center 34%; transition:transform .55s var(--ease-out) }
+    .about-profile-caption { position:absolute; z-index:1; right:1.2rem; bottom:1.2rem; left:1.2rem; display:grid; gap:.25rem; color:#fff }
+    .about-profile-caption strong { font-size:clamp(1.1rem,2vw,1.35rem); font-weight:740; letter-spacing:-.03em }
+    .about-profile-caption span { color:rgba(255,255,255,.8); font-size:.78rem; font-weight:550 }
+    .about-years { position:absolute; z-index:2; top:1.15rem; right:-.2rem; display:grid; min-width:116px; padding:.62rem .8rem; border:1px solid rgba(24,37,34,.08); border-radius:14px; background:#fff; box-shadow:0 12px 28px rgba(24,37,34,.13) }
+    .about-years strong { color:var(--accent); font-size:1.35rem; font-weight:760; letter-spacing:-.06em; line-height:1 }
+    .about-years span { margin-top:.2rem; color:var(--muted); font-size:.65rem; font-weight:720; letter-spacing:.1em; text-transform:uppercase }
+    .about-heading > .section-kicker { --reveal-delay:80ms }
+    .about-heading > h2 { --reveal-delay:140ms }
+    .about-content > .about-intro { --reveal-delay:220ms }
+    .about-content > .about-summary { --reveal-delay:300ms }
+    .about-content > .about-role { --reveal-delay:380ms }
+    .about-content .row > div:nth-child(1) .profile-card { --reveal-delay:460ms }
+    .about-content .row > div:nth-child(2) .profile-card { --reveal-delay:560ms }
+    .about-summary { max-width:590px; margin:0; color:var(--muted); font-size:.98rem; line-height:1.75 }
     .aside-label { color:var(--muted); font-size:.8rem; text-transform:uppercase; letter-spacing:.1em }
     .aside-value { font-size:1.05rem; font-weight:620 }
     .section { padding:6.5rem 0; border-bottom:1px solid var(--line) }
     .section-kicker { color:var(--accent); font-size:.76rem; font-weight:750; letter-spacing:.12em; text-transform:uppercase }
     h2 { font-size:clamp(2.1rem,4vw,3.5rem); letter-spacing:-.055em; line-height:1.05; font-weight:650 }
     .section-lead { color:var(--muted); max-width:540px; line-height:1.75 }
-    .profile-card,.empty-card,.contact-card { background:var(--surface); border:1px solid var(--line); border-radius:14px }
-    .profile-card { padding:2rem; height:100%; box-shadow:0 8px 24px rgba(24,37,34,.035); transition:transform .35s var(--ease-out), box-shadow .35s var(--ease-out), border-color .35s ease }
-    .profile-card i { color:var(--accent); font-size:1.1rem }
-    .profile-card h3 { font-size:1rem; font-weight:700; margin:1.4rem 0 .55rem }
+    .profile-card,.empty-card { background:var(--surface); border:1px solid var(--line); border-radius:14px }
+    .profile-card { padding:1.45rem; height:100%; border-radius:16px; box-shadow:0 8px 24px rgba(24,37,34,.035); transition:transform .35s var(--ease-out), box-shadow .35s var(--ease-out), border-color .35s ease }
+    .profile-card i { display:grid; width:42px; height:42px; place-items:center; border:1px solid rgba(36,107,88,.1); border-radius:13px; background:var(--soft); color:var(--accent); font-size:1.05rem }
+    .profile-card h3 { font-size:.98rem; font-weight:720; margin:1rem 0 .45rem }
     .profile-card p,.empty-card p { color:var(--muted); line-height:1.7; margin:0 }
     .empty-card { padding:2rem; min-height:190px; display:flex; flex-direction:column; justify-content:space-between; transition:transform .35s var(--ease-out), box-shadow .35s var(--ease-out), border-color .35s ease }
     .empty-card .icon { color:var(--accent); font-size:1.15rem }
     .empty-card small { color:var(--muted); letter-spacing:.03em }
-    .skills-stack-shell { position:relative; width:min(100%,560px); margin:0 auto; padding-bottom:46px }
+    .skills-stack-shell { position:relative; width:min(100%,620px); margin:0 auto; padding-bottom:46px }
     .skills-stack-nav { position:absolute; z-index:10; top:43%; display:grid; width:42px; height:42px; place-items:center; border:1px solid rgba(24,37,34,.12); border-radius:50%; background:rgba(255,255,255,.94); color:var(--ink); box-shadow:0 5px 18px rgba(24,37,34,.12); opacity:0; transform:scale(.9); transition:opacity .2s ease,transform .25s var(--ease-out),background .2s ease }
     .skills-stack-nav--previous { left:-21px }
     .skills-stack-nav--next { right:-21px }
@@ -91,11 +115,16 @@
     .skills-stack-nav:hover { background:#fff; transform:scale(1.08) }
     .skills-stack-nav:focus-visible { outline:3px solid rgba(36,107,88,.3); outline-offset:3px }
     .skills-stack { position:relative; width:100%; height:374px; perspective:1000px; isolation:isolate }
-    .skill-stack-card { position:absolute; top:0; left:0; width:100%; height:100%; overflow:hidden; border:1px solid var(--line); border-radius:14px; background:var(--surface); box-shadow:0 20px 50px rgba(24,37,34,.1); transform-origin:50% 10%; transition:transform .9s cubic-bezier(.2,.94,.35,1.12),opacity .55s ease,box-shadow .55s ease; will-change:transform }
-    .skill-stack-card--0 { z-index:4; opacity:1; transform:translateY(0) scale(1); box-shadow:0 22px 55px rgba(24,37,34,.13) }
-    .skill-stack-card--1 { z-index:3; opacity:.94; transform:translateY(14px) scale(.99); background:#fbfcfb }
-    .skill-stack-card--2 { z-index:2; opacity:.88; transform:translateY(28px) scale(.98); background:#f8faf8 }
-    .skill-stack-card--3 { z-index:1; opacity:.82; transform:translateY(42px) scale(.97); background:#f5f8f5 }
+    .skill-stack-card { position:absolute; top:0; left:0; width:100%; height:100%; overflow:hidden; border:1px solid #dfe6f0; border-radius:18px; background:var(--surface); box-shadow:0 20px 50px rgba(24,37,34,.1); transform-origin:50% 10%; transition:transform .9s cubic-bezier(.2,.94,.35,1.12),opacity .55s ease,box-shadow .55s ease }
+    .skill-stack-card::before { content:""; position:absolute; z-index:1; top:0; right:0; left:0; height:44px; border-bottom:1px solid #e3e9f2; background:radial-gradient(circle at 18px 50%,#dce5f1 0 5px,transparent 5.5px),radial-gradient(circle at 37px 50%,#dce5f1 0 5px,transparent 5.5px),radial-gradient(circle at 56px 50%,#dce5f1 0 5px,transparent 5.5px),#fff }
+    .skill-stack-card--0::before { display:none }
+    .skill-stack-card:not(.skill-stack-card--0)::after { content:""; position:absolute; top:62px; right:22px; left:22px; height:152px; border-radius:11px; background:linear-gradient(#e7f0ff,#e7f0ff) 0 0/100% 34px no-repeat,linear-gradient(#f1f4f8,#f1f4f8) 0 47px/100% 34px no-repeat,linear-gradient(#f1f4f8,#f1f4f8) 0 94px/100% 34px no-repeat,linear-gradient(#f1f4f8,#f1f4f8) 0 141px/100% 34px no-repeat; pointer-events:none }
+    .skill-stack-card:not(.skill-stack-card--0) .skill-stack-content { visibility:hidden }
+    .skill-stack-card--0 { z-index:4; opacity:1; transform:translate(0,0) rotate(0) scale(1); box-shadow:0 22px 55px rgba(24,37,34,.13); border-color:#dce5f1 }
+    .skill-stack-card--1 { z-index:3; opacity:.96; transform:translate(42px,-24px) rotate(5deg) scale(.97); background:#fff }
+    .skill-stack-card--2 { z-index:2; opacity:.92; transform:translate(-34px,24px) rotate(-6deg) scale(.96); background:#fff }
+    .skill-stack-card--3 { z-index:1; opacity:.88; transform:translate(-52px,48px) rotate(-9deg) scale(.93); background:#fff }
+    .skill-stack-card--4 { z-index:0; opacity:.84; transform:translate(54px,58px) rotate(8deg) scale(.9); background:#fff }
     .skill-stack-content { display:grid; grid-template-columns:minmax(0,1fr) 220px; align-items:center; gap:1.25rem; height:100%; padding:clamp(1.25rem,4vw,2.4rem) }
     .skill-stack-kicker { margin-bottom:.65rem; color:var(--accent); font-size:.72rem; font-weight:750; letter-spacing:.14em; text-transform:uppercase }
     .skill-stack-title { margin:0 0 1rem; font-size:clamp(1.7rem,4vw,2.8rem); font-weight:680; letter-spacing:-.055em; line-height:1.02 }
@@ -114,14 +143,30 @@
     .skill-orbit-center { position:relative; z-index:2; display:grid; width:76px; height:76px; place-items:center; border:1px solid #ccd5ce; border-radius:50%; background:rgba(255,255,255,.96); box-shadow:0 8px 22px rgba(24,37,34,.1); color:var(--ink); font-size:.7rem; font-weight:750; letter-spacing:.1em }
     @keyframes skill-orbit-turn { to { transform:rotate(1turn) } }
     @keyframes skill-orbit-unturn { to { transform:rotate(-1turn) } }
-    .contact-card { position:relative; overflow:hidden; padding:clamp(1.25rem,4vw,3rem); display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:center; gap:clamp(1.5rem,4vw,3.5rem); border:0; border-radius:18px; background:linear-gradient(135deg,#173e34,#205a48); color:#fff; box-shadow:0 22px 55px rgba(24,60,49,.16) }
-    .contact-card::after { content:""; position:absolute; top:-130px; right:-90px; width:330px; height:330px; border:1px solid rgba(255,255,255,.1); border-radius:50%; box-shadow:0 0 0 28px rgba(255,255,255,.035),0 0 0 58px rgba(255,255,255,.025); pointer-events:none }
-    .contact-intro,.contact-main { position:relative; z-index:1 }
-    .contact-intro { display:grid; grid-template-columns:minmax(110px,.72fr) minmax(0,1fr); align-items:center; gap:clamp(1rem,2.2vw,1.8rem) }
-    .contact-photo { display:block; width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center 28%; border:1px solid rgba(255,255,255,.32); border-radius:13px; box-shadow:0 14px 32px rgba(4,24,19,.2) }
-    .contact-intro h2 { max-width:440px; font-size:clamp(2rem,4vw,3.3rem); line-height:1.04; letter-spacing:-.055em }
-    .contact-intro p { max-width:390px; margin:0; color:rgba(255,255,255,.76); line-height:1.75 }
-    .contact-form { display:grid; gap:.9rem; padding:clamp(1rem,2.5vw,1.5rem); border:1px solid rgba(255,255,255,.72); border-radius:14px; background:#fff; color:var(--ink); box-shadow:0 14px 38px rgba(4,24,19,.14) }
+    .contact-heading-line { display:flex; align-items:flex-start; justify-content:space-between; gap:.75rem; margin-bottom:1.25rem }
+    .contact-visual { position:relative; display:grid; width:clamp(76px,9vw,104px); flex:none; aspect-ratio:1; place-items:center; overflow:hidden; isolation:isolate; border:1px solid rgba(36,107,88,.16); border-radius:50%; background:radial-gradient(circle at 50% 46%,rgba(36,107,88,.1),transparent 60%),var(--soft) }
+    .contact-visual::before,.contact-visual::after { content:""; position:absolute; z-index:-1; width:78%; aspect-ratio:1; border:1px dashed rgba(36,107,88,.35); border-radius:50%; animation:contact-orbit-turn 34s linear infinite }
+    .contact-visual::after { width:56%; border-style:solid; border-color:rgba(36,107,88,.16); animation:none }
+    .contact-visual-node { position:absolute; z-index:1; display:grid; width:clamp(19px,2.1vw,24px); aspect-ratio:1; place-items:center; border:1px solid rgba(36,107,88,.15); border-radius:8px; background:#fff; box-shadow:0 4px 10px rgba(24,37,34,.08); color:var(--accent); font-size:.66rem }
+    .contact-visual-node--top { top:3%; left:50%; transform:translateX(-50%) }
+    .contact-visual-node--left { bottom:10%; left:9% }
+    .contact-visual-node--right { right:9%; bottom:10% }
+    .contact-visual-center { display:grid; width:48%; aspect-ratio:1; place-items:center; border:1px solid rgba(36,107,88,.15); border-radius:50%; background:#fff; box-shadow:0 0 0 5px rgba(36,107,88,.06),0 5px 16px rgba(24,37,34,.09); color:var(--accent); font-size:.85rem }
+    @keyframes contact-orbit-turn { to { transform:rotate(1turn) } }
+    .contact-availability { display:inline-flex; align-items:center; gap:.5rem; margin:0 0 .25rem; padding:.38rem .65rem; border:1px solid rgba(36,107,88,.15); border-radius:999px; background:rgba(231,238,233,.8); color:#315c4d; font-size:.75rem; font-weight:680 }
+    .contact-availability::before { content:""; width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 3px rgba(36,107,88,.1) }
+    .contact-details { display:grid; gap:.45rem; margin-top:.65rem }
+    .contact-detail { display:flex; min-width:0; min-height:46px; align-items:center; gap:.7rem; padding:.3rem .4rem; border:1px solid transparent; border-radius:12px; color:var(--ink); text-decoration:none; transition:background-color .18s ease,border-color .18s ease,color .18s ease }
+    .contact-detail:hover { border-color:var(--line); background:#fff; color:var(--accent) }
+    .contact-detail-icon { display:grid; width:38px; height:38px; flex:none; place-items:center; border:1px solid rgba(36,107,88,.1); border-radius:11px; background:#fff; color:var(--accent) }
+    .contact-detail-copy { display:grid; min-width:0; gap:.05rem }
+    .contact-detail-copy small { color:var(--muted); font-size:.7rem; font-weight:620 }
+    .contact-detail-copy strong { overflow-wrap:anywhere; color:var(--ink); font-size:.82rem; font-weight:650 }
+    .contact-form { display:grid; align-content:center; gap:1rem; min-width:0; padding:clamp(1.25rem,2.5vw,1.8rem); border:1px solid var(--line); border-radius:16px; background:var(--surface); color:var(--ink); box-shadow:0 8px 24px rgba(24,37,34,.035) }
+    .contact-form-heading { margin-bottom:.1rem }
+    .contact-form-label { display:block; margin-bottom:.45rem; color:var(--accent); font-size:.78rem; font-weight:680 }
+    .contact-form-heading h3 { margin:0; font-size:1.3rem; font-weight:720; letter-spacing:-.035em; line-height:1.2 }
+    .contact-form-heading p { margin:.35rem 0 0; color:var(--muted); font-size:.84rem; line-height:1.5 }
     .contact-form-fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.85rem }
     .contact-field { display:grid; gap:.4rem; color:#34443d; font-size:.8rem; font-weight:680 }
     .contact-field--message { grid-column:1/-1 }
@@ -129,30 +174,54 @@
     .contact-field input { min-height:44px; padding:.65rem .75rem }
     .contact-field textarea { min-height:112px; padding:.7rem .75rem; resize:vertical }
     .contact-field input:focus,.contact-field textarea:focus { border-color:#4f8a70; background:#fff; box-shadow:0 0 0 3px rgba(36,107,88,.13) }
-    .contact-submit { display:inline-flex; min-height:46px; align-items:center; justify-content:center; gap:.55rem; padding:.7rem 1rem; border:0; border-radius:8px; background:var(--accent); color:#fff; font-size:.9rem; font-weight:680; transition:background .2s ease,transform .2s var(--ease-out) }
+    .contact-submit { display:inline-flex; width:100%; min-height:48px; align-items:center; justify-content:center; gap:.55rem; padding:.7rem 1rem; border:0; border-radius:10px; background:var(--accent); color:#fff; font-size:.9rem; font-weight:680; transition:background-color .2s ease,transform .2s var(--ease-out) }
     .contact-submit:hover { background:#174c3e }
-    .contact-submit:active { transform:scale(.985) }
+    .contact-submit:active { transform:scale(.96) }
     .contact-submit:disabled { cursor:wait; opacity:.72 }
     .contact-form-status { min-height:1.35em; margin:0; color:#52665c; font-size:.82rem; line-height:1.4 }
-    .contact-submit:focus-visible,.contact-social-link:focus-visible { outline:3px solid #c2e6d1; outline-offset:3px }
-    .contact-socials { display:flex; align-items:center; justify-content:flex-end; gap:.55rem; margin-top:.85rem }
-    .contact-social-link { display:grid; width:40px; height:40px; place-items:center; border:1px solid rgba(255,255,255,.22); border-radius:11px; background:rgba(255,255,255,.1); color:#fff; font-size:1rem; text-decoration:none; transition:transform .2s var(--ease-out),background .2s ease,border-color .2s ease }
-    .contact-social-link:hover { transform:translateY(-2px); border-color:rgba(255,255,255,.5); background:rgba(255,255,255,.2); color:#fff }
-    .experience-list { position:relative; padding-left:1.5rem }
-    .experience-list::before { content:""; position:absolute; top:.4rem; bottom:.8rem; left:.22rem; width:1px; background:linear-gradient(to bottom,var(--accent),var(--line) 90%) }
-    .experience-item { position:relative; padding:1.35rem 0 1.55rem; border-bottom:1px solid var(--line) }
-    .experience-item::before { content:""; position:absolute; top:1.85rem; left:-1.57rem; width:.68rem; height:.68rem; border:2px solid var(--accent); border-radius:50%; background:var(--paper); box-shadow:0 0 0 4px var(--paper) }
-    .experience-item:nth-child(2) { --reveal-delay:65ms }
-    .experience-item:nth-child(3) { --reveal-delay:130ms }
-    .experience-item:nth-child(4) { --reveal-delay:195ms }
-    .experience-item:nth-child(5) { --reveal-delay:260ms }
-    .experience-item:last-child { border-bottom:0 }
-    .experience-item p { color:var(--muted); line-height:1.7; margin:.9rem 0 0 }
-    .experience-date { color:var(--muted); font-size:.9rem; white-space:nowrap }
-    .education-card { display:flex; gap:1.25rem; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:1.6rem; box-shadow:0 8px 24px rgba(24,37,34,.035); transition:transform .35s var(--ease-out), box-shadow .35s var(--ease-out) }
-    .education-card .icon { color:var(--accent); font-size:1.1rem }
+    .contact-submit:focus-visible,.contact-social-link:focus-visible,.contact-detail:focus-visible { outline:3px solid rgba(36,107,88,.3); outline-offset:2px }
+    .contact-socials { display:flex; align-items:center; justify-content:flex-start; gap:.55rem; margin-top:1rem }
+    .contact-social-link { display:grid; width:44px; height:44px; place-items:center; border:1px solid var(--line); border-radius:12px; background:var(--surface); color:var(--accent); font-size:1rem; text-decoration:none; transition:transform .2s var(--ease-out),background-color .2s ease,border-color .2s ease }
+    .contact-social-link:hover { transform:translateY(-2px); border-color:#b8c9bd; background:var(--soft); color:#174c3e }
+    .experience-tenure { display:inline-flex; align-items:center; gap:.8rem; margin-top:1.35rem; padding:.8rem 1rem; border-left:3px solid var(--accent); border-radius:0 12px 12px 0; background:rgba(255,255,255,.72); box-shadow:0 8px 24px rgba(24,37,34,.04) }
+    .experience-tenure strong { color:var(--accent); font-size:2.25rem; font-weight:760; line-height:1; letter-spacing:-.07em; font-variant-numeric:tabular-nums }
+    .experience-tenure span { max-width:120px; color:var(--muted); font-size:.78rem; font-weight:620; line-height:1.35 }
+    .experience-list { position:relative; display:grid; gap:1rem; padding-left:2rem }
+    .experience-list::before { content:""; position:absolute; top:.5rem; bottom:.5rem; left:.4rem; width:2px; border-radius:99px; background:linear-gradient(to bottom,var(--accent),rgba(36,107,88,.18) 80%,transparent) }
+    .experience-item { position:relative; padding:1.3rem 1.45rem 1.4rem; border:1px solid rgba(24,37,34,.07); border-radius:16px; background:var(--surface); box-shadow:0 1px 2px rgba(24,37,34,.025),0 10px 26px rgba(24,37,34,.045); transition:transform .25s var(--ease-out),box-shadow .25s ease,border-color .25s ease }
+    .experience-item::before { content:""; position:absolute; top:1.55rem; left:-2rem; width:.8rem; height:.8rem; border:2px solid var(--accent); border-radius:50%; background:var(--paper); box-shadow:0 0 0 5px var(--paper),0 0 0 6px rgba(36,107,88,.14) }
+    .experience-item:nth-child(2) { --reveal-delay:100ms }
+    .experience-item:nth-child(3) { --reveal-delay:200ms }
+    .experience-item:nth-child(4) { --reveal-delay:300ms }
+    .experience-item:nth-child(5) { --reveal-delay:400ms }
+    .experience-item:last-child { margin-bottom:0 }
+    .experience-item-header { display:flex; flex-wrap:wrap; align-items:flex-start; justify-content:space-between; gap:.85rem 1rem }
+    .experience-item h3 { margin:0 0 .45rem; font-size:1.08rem; font-weight:720; letter-spacing:-.025em; line-height:1.3 }
+    .experience-company { color:var(--ink); font-size:.88rem; font-weight:680 }
+    .experience-location { margin-top:.12rem; color:var(--muted); font-size:.78rem }
+    .experience-period { display:inline-flex; flex:none; align-items:center; padding:.48rem .7rem; border:1px solid rgba(36,107,88,.1); border-radius:999px; background:#f2f6f2; color:#40564c; font-size:.75rem; font-weight:650; line-height:1.35; text-align:center }
+    .experience-current { display:inline-flex; align-items:center; gap:.35rem; margin-top:.45rem; color:var(--accent); font-size:.67rem; font-weight:750; letter-spacing:.1em; text-transform:uppercase }
+    .experience-current::before { content:""; width:6px; height:6px; border-radius:50%; background:#438666; box-shadow:0 0 0 3px rgba(67,134,102,.12) }
+    .experience-item p { color:var(--muted); line-height:1.7; margin:.9rem 0 0; font-size:.93rem }
+    .education-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.9rem }
+    .education-card { display:grid; grid-template-columns:42px minmax(0,1fr); align-items:start; gap:1rem; min-width:0; padding:1.35rem; border:1px solid rgba(24,37,34,.07); border-radius:16px; background:var(--surface); box-shadow:0 1px 2px rgba(24,37,34,.025),0 10px 26px rgba(24,37,34,.045); transition:transform .25s var(--ease-out),box-shadow .25s ease,border-color .25s ease }
+    .education-card--degree,.education-card--honors { grid-column:1/-1 }
+    .education-card--degree { position:relative; overflow:hidden; border-color:rgba(36,107,88,.14); background:linear-gradient(115deg,#fff 0%,#fff 64%,#f0f5f1 100%) }
+    .education-card .icon { display:grid; width:42px; height:42px; flex:none; place-items:center; border:1px solid rgba(36,107,88,.09); border-radius:13px; background:var(--soft); color:var(--accent); font-size:1.05rem }
+    .education-card-content { min-width:0 }
+    .education-card-label { margin-bottom:.4rem; color:var(--accent); font-size:.67rem; font-weight:750; letter-spacing:.13em; text-transform:uppercase }
+    .education-card h3 { margin:0 0 .45rem; font-size:1rem; font-weight:720; letter-spacing:-.025em; line-height:1.35 }
+    .education-card--degree h3 { font-size:1.25rem }
+    .education-institution { color:var(--ink); font-size:.9rem; font-weight:650 }
+    .education-meta { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:.85rem }
+    .education-meta span { display:inline-flex; align-items:center; min-height:1.8rem; padding:.25rem .6rem; border:1px solid rgba(36,107,88,.1); border-radius:999px; background:rgba(231,238,233,.66); color:#40564c; font-size:.72rem; font-weight:620 }
     .education-card p { color:var(--muted); margin-top:.55rem }
-    .credential-list { color:var(--muted); line-height:1.9; padding-left:1.2rem }
+    .education-grid > .education-card:nth-child(2) { --reveal-delay:100ms }
+    .education-grid > .education-card:nth-child(3) { --reveal-delay:200ms }
+    .education-grid > .education-card:nth-child(4) { --reveal-delay:300ms }
+    .credential-list { display:grid; gap:.38rem; margin:0; padding:0; color:var(--muted); line-height:1.55; list-style:none }
+    .credential-list li { position:relative; padding-left:.95rem }
+    .credential-list li::before { content:""; position:absolute; top:.66em; left:.1rem; width:5px; height:5px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 3px rgba(36,107,88,.09) }
     .project-featured { display:grid; grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr); min-height:430px; overflow:hidden; border:1px solid rgba(255,255,255,.1); border-radius:18px; background:#173e34; color:#fff; box-shadow:0 22px 55px rgba(24,60,49,.13) }
     .project-featured-media { position:relative; min-height:430px; overflow:hidden; background:#dfe7e1 }
     .project-featured-media::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,transparent 65%,rgba(23,62,52,.12)),linear-gradient(0deg,rgba(10,29,24,.22),transparent 45%); pointer-events:none }
@@ -200,7 +269,8 @@
     .project-tag { display:inline-flex; align-items:center; min-height:1.75rem; padding:.25rem .65rem; border:1px solid #d8e2db; border-radius:999px; background:#f4f7f4; color:#315c4d; font-size:.68rem; font-weight:650; letter-spacing:.01em }
     .source-link { display:inline-flex; align-items:center; gap:.45rem; color:var(--accent); font-size:.88rem; font-weight:650; text-decoration:none; transition:gap .25s var(--ease-out), color .2s ease }
     .source-link:hover { color:#174c3e; gap:.65rem }
-    .profile-card:active,.empty-card:active { transform:scale(.99) }
+    .project-selector:active { transform:scale(.96) }
+    .skills-stack-nav:active { transform:scale(.96) }
     .motion-ready [data-reveal] { opacity:0; transform:translateY(18px); transition:opacity .65s var(--ease-out), transform .65s var(--ease-out); transition-delay:var(--reveal-delay,0ms) }
     .motion-ready [data-reveal].is-visible { opacity:1; transform:translateY(0) }
     .motion-ready .profile-card.is-visible:hover,.motion-ready .empty-card.is-visible:hover,.motion-ready .education-card.is-visible:hover,.motion-ready .project-card.is-visible:hover { transform:translateY(-4px) }
@@ -217,9 +287,12 @@
       .navbar-menu { width:100%; justify-content:space-between; gap:.1rem; margin:.35rem 0 0 }
       .navbar-menu .nav-link { padding:.5rem .48rem; font-size:.78rem }
       .navbar.is-compact .navbar-menu { margin:0 }
+      .education-grid { grid-template-columns:1fr }
+      .education-card--degree,.education-card--honors { grid-column:auto }
     }
     @media (hover:hover) and (pointer:fine) {
-      .profile-card:hover,.empty-card:hover,.education-card:hover,.project-card:hover { transform:translateY(-4px); border-color:#cbd8cf; box-shadow:0 16px 34px rgba(24,37,34,.075) }
+      .profile-card:hover,.empty-card:hover,.education-card:hover,.motion-ready .education-card.is-visible:hover,.project-card:hover { transform:translateY(-4px); border-color:#cbd8cf; box-shadow:0 16px 34px rgba(24,37,34,.075) }
+      .experience-item:hover,.motion-ready .experience-item.is-visible:hover { transform:translateY(-3px); border-color:#cbd8cf; box-shadow:0 16px 34px rgba(24,37,34,.075) }
       .project-card:hover .project-image { transform:scale(1.035) }
       .project-featured:hover,.motion-ready .project-featured.is-visible:hover { transform:translateY(-3px); box-shadow:0 28px 62px rgba(24,60,49,.2) }
       .project-featured { transition:transform .35s var(--ease-out),box-shadow .35s ease }
@@ -227,10 +300,24 @@
       .project-selector:hover:not([aria-pressed="true"]) { transform:translateY(-2px); border-color:#b6c8bb; background:#fff }
     }
     @media (max-width:991.98px) { .project-featured { grid-template-columns:1fr } .project-featured-media { min-height:0; aspect-ratio:16/9 } .project-featured-copy { padding:2rem } }
-    @media (max-width:767.98px) { .hero { padding:5.5rem 0 4.5rem } .section { padding:4.5rem 0 } .hero-aside { min-height:0 } .contact-card { grid-template-columns:1fr; gap:1.4rem } .contact-intro { grid-template-columns:112px minmax(0,1fr) } .contact-photo { max-height:150px } .contact-socials { justify-content:flex-start } .hero-stats { margin-top:2rem } .skills-stack { height:clamp(260px,70vw,320px) } .skill-stack-content { grid-template-columns:minmax(0,1fr) 156px; gap:.35rem; padding:1.2rem } .skill-orbit { width:150px; height:150px } .skill-orbit-ring--outer { --orbit-offset:-64px } .skill-orbit-ring--inner { inset:20px; --orbit-offset:-44px } .skill-orbit-icon { width:29px; height:29px } .skill-orbit-icon img { width:17px; height:17px } .skill-orbit-center { width:54px; height:54px; font-size:.58rem } .skill-chip { padding:.3rem .5rem; font-size:.7rem } }
+    @media (max-width:767.98px) { .hero { padding:5.5rem 0 4.5rem } .section { padding:4.5rem 0 } .hero-aside { min-height:0 } .hero-stats { margin-top:2rem } .skills-stack { height:clamp(260px,70vw,320px) } .skill-stack-content { grid-template-columns:minmax(0,1fr) 156px; gap:.35rem; padding:1.2rem } .skill-orbit { width:150px; height:150px } .skill-orbit-ring--outer { --orbit-offset:-64px } .skill-orbit-ring--inner { inset:20px; --orbit-offset:-44px } .skill-orbit-icon { width:29px; height:29px } .skill-orbit-icon img { width:17px; height:17px } .skill-orbit-center { width:54px; height:54px; font-size:.58rem } .skill-chip { padding:.3rem .5rem; font-size:.7rem } .experience-list { padding-left:1.75rem } .experience-item { padding:1.15rem 1.1rem 1.2rem } .experience-item::before { left:-1.75rem } .about-portrait-wrap { width:min(100%,360px) } }
     @media (max-width:540px) { .project-featured-copy { padding:1.5rem } }
+    @media (max-width:991.98px) {
+      .skill-stack-card--1 { transform:translate(30px,-18px) rotate(4deg) scale(.98) }
+      .skill-stack-card--2 { transform:translate(-24px,18px) rotate(-5deg) scale(.96) }
+      .skill-stack-card--3 { transform:translate(-36px,36px) rotate(-7deg) scale(.93) }
+      .skill-stack-card--4 { transform:translate(38px,46px) rotate(6deg) scale(.9) }
+    }
+    @media (max-width:767.98px) {
+      .skill-stack-card--1 { transform:translate(20px,-12px) rotate(3deg) scale(.98) }
+      .skill-stack-card--2 { transform:translate(-17px,14px) rotate(-4deg) scale(.96) }
+      .skill-stack-card--3 { transform:translate(-25px,28px) rotate(-6deg) scale(.93) }
+      .skill-stack-card--4 { transform:translate(28px,40px) rotate(5deg) scale(.9) }
+      .skill-stack-card:not(.skill-stack-card--0)::after { right:14px; left:14px }
+    }
     @media (hover:none) { .skills-stack-nav { opacity:1; transform:scale(1) } }
-    @media (max-width:420px) { .hero-actions { align-items:stretch; flex-direction:column } .hero-button { width:100% } .hero-stats { gap:.65rem } .hero-stat span { font-size:.72rem } .contact-intro { grid-template-columns:88px minmax(0,1fr); gap:.85rem } .contact-photo { max-height:120px } .contact-intro h2 { font-size:1.8rem } .contact-intro p { font-size:.88rem } .contact-form-fields { grid-template-columns:1fr } .contact-field--message { grid-column:auto } }
+    @media (max-width:575.98px) { .about-portrait-wrap { width:min(100%,320px) } .about-years { right:0 } }
+    @media (max-width:420px) { .hero-actions { align-items:stretch; flex-direction:column } .hero-button { width:100% } .hero-stats { gap:.65rem } .hero-stat span { font-size:.72rem } .contact-visual-node { width:24px; border-radius:8px; font-size:.67rem } .contact-visual-node--left,.contact-visual-node--right { bottom:3% } .contact-visual-center { width:42%; font-size:.68rem } .contact-form-fields { grid-template-columns:1fr } .contact-field--message { grid-column:auto } }
     @media (max-width:380px) { .skill-stack-content { grid-template-columns:minmax(0,1fr) 128px; padding:1rem; gap:.1rem } .skill-orbit { width:124px; height:124px } .skill-orbit-ring--outer { --orbit-offset:-53px } .skill-orbit-ring--inner { inset:16px; --orbit-offset:-36px } .skill-orbit-icon { width:27px; height:27px } .skill-orbit-icon img { width:16px; height:16px } .skill-orbit-center { width:46px; height:46px; font-size:.52rem } .skill-stack-title { font-size:1.45rem } }
     @media (prefers-reduced-motion:reduce) {
       html { scroll-behavior:auto }
@@ -240,7 +327,7 @@
       .marquee-track { animation:none!important; transform:none!important; will-change:auto }
     }
     @media (prefers-reduced-transparency:reduce) { .navbar { background:var(--paper); backdrop-filter:none; -webkit-backdrop-filter:none } }
-    @media (prefers-contrast:more) { .navbar,.profile-card,.empty-card,.contact-card,.education-card,.project-card { border-color:#68736d } }
+    @media (prefers-contrast:more) { .navbar,.profile-card,.empty-card,.contact-form,.education-card,.project-card { border-color:#68736d } }
   </style>
 </head>
 <body>
@@ -263,7 +350,7 @@
         <div class="container">
           <div class="row align-items-end justify-content-center g-5 text-center">
             <div class="col-lg-10">
-              <div class="eyebrow inline-flex items-center rounded-full border border-emerald-900/10 bg-white/70 px-3 py-2 shadow-sm"><i class="fa-solid fa-code me-2" aria-hidden="true"></i>IT · Software · Application Support</div>
+              <div class="eyebrow inline-flex items-center rounded-full border border-emerald-900/10 bg-white/70 px-3 py-2 shadow-sm"><i class="fa-solid fa-code me-2" aria-hidden="true"></i>IT Professional · Software Engineering · Application &amp; Systems Support</div>
               <h1><span class="hero-heading-line">Design, Develop</span><br><span class="brand-mark">Deliver.</span></h1>
               <p class="hero-copy">Bespoke web solutions tailored just for you!</p>
               <div class="hero-actions">
@@ -308,18 +395,32 @@
 
       <section class="section" id="about">
         <div class="container">
-          <div class="row g-5">
-            <div class="col-lg-4">
-              <div class="section-kicker mb-3">02 / About</div>
-              <h2 class="mb-3">About me.</h2>
-              <p class="section-lead">Experience spanning application engineering, system integration, technical operations, and end-user support.</p>
-              <div class="about-role" data-reveal><span class="aside-label">Current role</span><strong class="aside-value">Senior Software Engineering Analyst</strong><span class="small text-secondary">Accenture · 2024–Present</span></div>
+          <div class="about-heading mb-5">
+            <div class="section-kicker mb-3" data-reveal>02 / About</div>
+            <h2 class="mb-0" data-reveal>About me.</h2>
+          </div>
+          <div class="row align-items-start g-5">
+            <div class="col-lg-5">
+              <div class="about-portrait-wrap" data-reveal>
+                <div class="about-profile">
+                  <img class="about-photo" src="./assets/jovan-profile.jpg" alt="Portrait of Jovan Ali P. Casilang" loading="lazy">
+                  <div class="about-profile-caption"><strong>Jovan Ali P. Casilang</strong><span>IT professional · Calasiao, Philippines</span></div>
+                </div>
+                <div class="about-years"><strong>11+</strong><span>years experience</span></div>
+              </div>
             </div>
-            <div class="col-lg-7 offset-lg-1">
-              <p class="fs-5 lh-lg mb-4" data-reveal>At Accenture, Jovan works with Java and Google Cloud Platform in Agile teams, contributing to software delivery, technical decision-making, and system reliability. Earlier roles include enterprise application support and programming, systems support, and customer service for telecommunications.</p>
-              <div class="row g-3">
-                <div class="col-sm-6" v-for="card in profileCards" :key="card.title">
-                  <article class="profile-card" data-reveal><i :class="card.icon" aria-hidden="true"></i><h3>{{ card.title }}</h3><p>{{ card.description }}</p></article>
+            <div class="col-lg-7">
+              <div class="about-content">
+                <p class="section-lead about-intro" data-reveal>I’m Jovan—an IT professional whose work spans software development, application and systems support, and customer service.</p>
+                <p class="about-summary" data-reveal>At Accenture, I develop and support Java applications on Google Cloud Platform. Earlier roles in programming, hands-on IT support, and telecom service taught me to see technology from both sides: how it’s built and what it’s like to rely on it.</p>
+                <div class="about-role" data-reveal>
+                  <div class="about-role-copy"><span class="aside-label">Current role</span><strong class="aside-value">Senior Software Engineering Analyst</strong><span class="small">Accenture · September 1, 2024–Present</span></div>
+                  <span class="about-role-mark"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>
+                </div>
+                <div class="row g-3 mt-1">
+                  <div class="col-sm-6" v-for="card in profileCards" :key="card.title">
+                    <article class="profile-card" data-reveal><i :class="card.icon" aria-hidden="true"></i><h3>{{ card.title }}</h3><p>{{ card.description }}</p></article>
+                  </div>
                 </div>
               </div>
             </div>
@@ -360,13 +461,13 @@
       <div class="section about-subsection" id="experience">
         <div class="container">
           <div class="row g-5">
-            <div class="col-lg-4"><div class="section-kicker mb-3">04 / Experience</div><h2 class="mb-3">A career in software and support.</h2><p class="section-lead">Progressive experience across software engineering, systems support, programming, and customer operations.</p></div>
+            <div class="col-lg-4"><div class="section-kicker mb-3">04 / Experience</div><h2 class="mb-3">A career in software and support.</h2><p class="section-lead">11+ years across software engineering, application and systems support, programming, technical operations, and customer service.</p><div class="experience-tenure" data-reveal><strong>11+</strong><span>years of professional experience</span></div></div>
             <div class="col-lg-7 offset-lg-1"><div class="experience-list">
-              <article class="experience-item" data-reveal><div class="d-flex flex-wrap justify-content-between gap-2"><div><h3 class="h5 fw-bold mb-1">Senior Software Engineering Analyst</h3><div class="fw-semibold">Accenture, Inc.</div></div><span class="experience-date">September 2024 – Present</span></div><p>Designs, codes, tests, debugs, and optimizes software components using Java and GCP. Contributes to technical decisions, collaborates with cross-functional teams, mentors junior colleagues, monitors workflows, and documents technical processes.</p></article>
-              <article class="experience-item" data-reveal><div class="d-flex flex-wrap justify-content-between gap-2"><div><h3 class="h5 fw-bold mb-1">Software Engineering Analyst</h3><div class="fw-semibold">Accenture, Inc.</div></div><span class="experience-date">July 2021 – August 2024</span></div><p>Built, configured, and tested application features using Java and GCP; supported system integration, application maintenance, Agile delivery, and resolution of operational issues.</p></article>
-              <article class="experience-item" data-reveal><div class="d-flex flex-wrap justify-content-between gap-2"><div><h3 class="h5 fw-bold mb-1">Junior Programmer</h3><div class="fw-semibold">Guanzon Group of Companies</div></div><span class="experience-date">May 2018 – July 2021</span></div><p>Wrote and tested code for internal systems; maintained applications supporting inventory, payroll, and branch operations; resolved bugs and documented system changes.</p></article>
-              <article class="experience-item" data-reveal><div class="d-flex flex-wrap justify-content-between gap-2"><div><h3 class="h5 fw-bold mb-1">Systems Support</h3><div class="fw-semibold">Guanzon Group of Companies</div></div><span class="experience-date">January – May 2018</span></div><p>Provided help desk and remote support; diagnosed and troubleshot computer hardware, software, and network issues; installed systems and business applications; and assisted with backups and data transfers.</p></article>
-              <article class="experience-item" data-reveal><div class="d-flex flex-wrap justify-content-between gap-2"><div><h3 class="h5 fw-bold mb-1">Business Office Assistant</h3><div class="fw-semibold">Philippine Long Distance Telephone Company</div></div><span class="experience-date">June 2015 – December 2017</span></div><p>Supported broadband, landline, and digital service customers; helped troubleshoot connectivity, processed repair tickets, documented service concerns, and coordinated escalations.</p></article>
+              <article class="experience-item" data-reveal><div class="experience-item-header"><div><h3>Senior Software Engineering Analyst</h3><div class="experience-company">Accenture, Inc.</div><div class="experience-location">Taguig City, Metro Manila, Philippines</div><span class="experience-current">Current role</span></div><div class="experience-period"><time datetime="2024-09-01">Sep 1, 2024</time> – Present</div></div><p>Designs, codes, tests, debugs, and optimizes Java and Google Cloud Platform software using modern frameworks and Agile methods. Serves as a subject matter expert, contributes to technical decisions, collaborates with stakeholders, mentors junior teammates, monitors system alerts and workflows, and documents processes to support reliability.</p></article>
+              <article class="experience-item" data-reveal><div class="experience-item-header"><div><h3>Software Engineering Analyst</h3><div class="experience-company">Accenture, Inc.</div><div class="experience-location">Taguig City, Metro Manila, Philippines</div></div><div class="experience-period"><time datetime="2021-07-26">Jul 26, 2021</time> – <time datetime="2024-08-31">Aug 31, 2024</time></div></div><p>Built, configured, and tested Java and Google Cloud Platform application components. Supported system integration, aligned solutions with client requirements, maintained and enhanced applications, collaborated with Agile teams and system architects, and helped identify technical and delivery risks.</p></article>
+              <article class="experience-item" data-reveal><div class="experience-item-header"><div><h3>Junior Programmer</h3><div class="experience-company">Guanzon Group of Companies</div><div class="experience-location">Dagupan City, Philippines</div></div><div class="experience-period"><time datetime="2018-05-02">May 2, 2018</time> – <time datetime="2021-07-23">Jul 23, 2021</time></div></div><p>Wrote, updated, and tested code for internal systems; fixed bugs and supported MIS requests; maintained inventory, payroll, and branch applications; and documented program changes and user instructions.</p></article>
+              <article class="experience-item" data-reveal><div class="experience-item-header"><div><h3>Systems Support</h3><div class="experience-company">Guanzon Group of Companies</div><div class="experience-location">Dagupan City, Philippines</div></div><div class="experience-period"><time datetime="2018-01-17">Jan 17, 2018</time> – <time datetime="2018-05-01">May 1, 2018</time></div></div><p>Provided help desk and remote support using AnyDesk and TeamViewer. Troubleshot hardware, software, and network issues; installed and configured Windows and business applications; supported account access and printers; and assisted with backups and data transfers.</p></article>
+              <article class="experience-item" data-reveal><div class="experience-item-header"><div><h3>Business Office Assistant</h3><div class="experience-company">Philippine Long Distance Telephone Company</div><div class="experience-location">Urdaneta City, Philippines</div></div><div class="experience-period"><time datetime="2015-06-24">Jun 24, 2015</time> – <time datetime="2017-12-30">Dec 30, 2017</time></div></div><p>Supported broadband, landline, and digital service customers by phone, email, and chat. Helped troubleshoot connectivity, explained billing statements, adjustments, and service concerns, cross-sold and upsold service options, processed repair tickets, documented interactions in the CRM, and coordinated escalations with field and backend teams.</p></article>
             </div></div>
           </div>
         </div>
@@ -374,23 +475,83 @@
 
       <div class="section about-subsection" id="education">
         <div class="container">
-          <div class="row g-5"><div class="col-lg-4"><div class="section-kicker mb-3">05 / Education</div><h2 class="mb-3">Education and credentials.</h2></div>
-            <div class="col-lg-7 offset-lg-1"><article class="education-card mb-3" data-reveal><div class="icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div><div><h3 class="h5 fw-bold mb-1">Bachelor of Science in Information Technology</h3><div class="fw-semibold">Colegio de Dagupan</div><p class="mb-0">2011–2015 · Dagupan City, Philippines</p></div></article><article class="education-card mb-3" data-reveal><div class="icon"><i class="fa-solid fa-award" aria-hidden="true"></i></div><div><h3 class="h5 fw-bold mb-2">Certifications</h3><ul class="credential-list mb-0"><li>Google Associate Cloud Engineer</li><li>Java SE 11</li><li>Java SE 17</li></ul></div></article><article class="education-card mb-3" data-reveal><div class="icon"><i class="fa-solid fa-language" aria-hidden="true"></i></div><div><h3 class="h6 fw-bold mb-2">Languages</h3><ul class="credential-list mb-0"><li>English</li><li>Tagalog</li><li>Pangasinense</li></ul></div></article><article class="education-card" data-reveal><div class="icon"><i class="fa-solid fa-award" aria-hidden="true"></i></div><div><h3 class="h6 fw-bold mb-2">Recognition</h3><ul class="credential-list mb-0"><li>College Academic Scholar</li><li>College Dean’s Lister</li></ul></div></article></div>
+          <div class="row g-5">
+            <div class="col-lg-4">
+              <div class="section-kicker mb-3">05 / Education</div>
+              <h2 class="mb-3">Education and credentials.</h2>
+              <p class="section-lead">An Information Technology degree, industry certifications, and academic honors.</p>
+            </div>
+            <div class="col-lg-7 offset-lg-1">
+              <div class="education-grid">
+                <article class="education-card education-card--degree" data-reveal>
+                  <div class="icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
+                  <div class="education-card-content">
+                    <div class="education-card-label">Bachelor’s degree</div>
+                    <h3>Bachelor of Science in Information Technology</h3>
+                    <div class="education-institution">Colegio de Dagupan</div>
+                    <div class="education-meta"><span>2011–2015</span><span>Dagupan City, Philippines</span></div>
+                  </div>
+                </article>
+                <article class="education-card" data-reveal>
+                  <div class="icon"><i class="fa-solid fa-award" aria-hidden="true"></i></div>
+                  <div class="education-card-content">
+                    <div class="education-card-label">Certifications</div>
+                    <h3>Professional credentials</h3>
+                    <ul class="credential-list"><li>Google Associate Cloud Engineer</li><li>Java SE 11</li><li>Java SE 17</li></ul>
+                  </div>
+                </article>
+                <article class="education-card" data-reveal>
+                  <div class="icon"><i class="fa-solid fa-language" aria-hidden="true"></i></div>
+                  <div class="education-card-content">
+                    <div class="education-card-label">Languages</div>
+                    <h3>Languages spoken</h3>
+                    <ul class="credential-list"><li>English</li><li>Tagalog</li><li>Pangasinense</li></ul>
+                  </div>
+                </article>
+                <article class="education-card education-card--honors" data-reveal>
+                  <div class="icon"><i class="fa-solid fa-award" aria-hidden="true"></i></div>
+                  <div class="education-card-content">
+                    <div class="education-card-label">Recognition</div>
+                    <h3>Academic honors &amp; achievements</h3>
+                    <ul class="credential-list"><li>College Academic Scholar</li><li>College Dean’s Lister</li><li>10th Honorable Mention · Calasiao Comprehensive National High School (2007–2011)</li><li>Class Valedictorian · Talibaew Elementary School (2001–2007)</li></ul>
+                  </div>
+                </article>
+              </div>
+            </div>
           </div>
         </div>
       </div></section>
 
       <section class="section" id="contact">
         <div class="container">
-          <div class="section-kicker mb-3" data-reveal>06 / Contact</div>
-          <div class="contact-card" data-reveal>
-            <div class="contact-intro">
-              <img class="contact-photo" src="./assets/jovan-profile.jpg" alt="Portrait of Jovan Ali P. Casilang" loading="lazy">
-              <div><h2 class="mb-3">Let’s Talk!</h2>
-              <p>As a developer with a decade in software engineering and product design, I'm excited to explore new professional avenues.</p></div>
+          <div class="row g-5 align-items-start">
+            <div class="col-lg-4">
+              <div class="contact-heading-line">
+                <div>
+                  <div class="section-kicker mb-3" data-reveal>06 / Contact</div>
+                  <h2 class="mb-0" data-reveal>Let’s talk.</h2>
+                </div>
+                <div class="contact-visual" data-reveal aria-hidden="true">
+                  <span class="contact-visual-node contact-visual-node--top"><i class="fa-solid fa-code"></i></span>
+                  <span class="contact-visual-node contact-visual-node--left"><i class="fa-solid fa-cloud"></i></span>
+                  <span class="contact-visual-node contact-visual-node--right"><i class="fa-solid fa-headset"></i></span>
+                  <span class="contact-visual-center"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+                </div>
+              </div>
+              <p class="section-lead">I’m open to roles in software engineering, application support, and systems support. Based in Calasiao, Pangasinan, I’m also open to international or shipboard opportunities and relocation.</p>
+              <div class="contact-availability">Open to opportunities</div>
+              <div class="contact-details">
+                <a class="contact-detail" href="mailto:jovancasilang_20@hotmail.com"><span class="contact-detail-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span><span class="contact-detail-copy"><small>Email</small><strong>jovancasilang_20@hotmail.com</strong></span></a>
+                <a class="contact-detail" href="tel:+639972231593"><span class="contact-detail-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span><span class="contact-detail-copy"><small>Phone</small><strong>+63 997 223 1593</strong></span></a>
+              </div>
+              <nav class="contact-socials" aria-label="Social profiles">
+                <a class="contact-social-link" href="https://github.com/jovanalic-dev" target="_blank" rel="noopener noreferrer" aria-label="Jovan on GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                <a class="contact-social-link" href="https://www.linkedin.com/in/jovan-ali-casilang-579678133/" target="_blank" rel="noopener noreferrer" aria-label="Jovan on LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+              </nav>
             </div>
-            <div class="contact-main">
-              <form class="contact-form" id="contactForm" action="https://formsubmit.co/jovancasilang_20@hotmail.com" method="POST">
+            <div class="col-lg-7 offset-lg-1">
+              <form class="contact-form" id="contactForm" action="https://formsubmit.co/jovancasilang_20@hotmail.com" method="POST" data-reveal>
+                <div class="contact-form-heading"><span class="contact-form-label">Send a message</span><h3>What would you like to discuss?</h3><p>A few details will help me get back to you.</p></div>
                 <div class="contact-form-fields">
                   <label class="contact-field">Name<input name="name" type="text" autocomplete="name" placeholder="Your name" required></label>
                   <label class="contact-field">Email address<input name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
@@ -399,26 +560,20 @@
                 <button class="contact-submit" type="submit">Send message <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
                 <p class="contact-form-status" id="contactFormStatus" role="status" aria-live="polite"></p>
               </form>
-              <nav class="contact-socials" aria-label="Contact and social links">
-                <a class="contact-social-link" href="mailto:jovancasilang_20@hotmail.com" aria-label="Email Jovan" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
-                <a class="contact-social-link" href="tel:+639972231593" aria-label="Call Jovan" title="Phone"><i class="fa-solid fa-phone" aria-hidden="true"></i></a>
-                <a class="contact-social-link" href="https://github.com/jovanalic-dev" target="_blank" rel="noopener noreferrer" aria-label="Jovan on GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-                <a class="contact-social-link" href="https://www.linkedin.com/in/jovan-ali-casilang-579678133/" target="_blank" rel="noopener noreferrer" aria-label="Jovan on LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
-              </nav>
             </div>
           </div>
         </div>
       </section>
-      <section class="service-marquee" aria-label="Services offered">
-        <h2 class="visually-hidden">Services offered</h2>
-        <p class="visually-hidden">Services: software development, application support, website development, and system integration. Build faster, ship lighter, design bolder.</p>
+      <section class="service-marquee" aria-label="Areas of experience">
+        <h2 class="visually-hidden">Areas of experience</h2>
+        <p class="visually-hidden">Areas of experience: software development, application support, system integration, technical troubleshooting, end-user support, and issue resolution.</p>
         <div class="marquee-row" aria-hidden="true"><div class="marquee-track">
-          <div class="marquee-group"><span class="marquee-word">Software Development</span><span class="marquee-separator">/</span><span class="marquee-word">Application Support</span><span class="marquee-separator">/</span><span class="marquee-word">Website Development</span><span class="marquee-separator">/</span><span class="marquee-word">System Integration</span><span class="marquee-separator">/</span></div>
-          <div class="marquee-group"><span class="marquee-word">Software Development</span><span class="marquee-separator">/</span><span class="marquee-word">Application Support</span><span class="marquee-separator">/</span><span class="marquee-word">Website Development</span><span class="marquee-separator">/</span><span class="marquee-word">System Integration</span><span class="marquee-separator">/</span></div>
+          <div class="marquee-group"><span class="marquee-word">Software Development</span><span class="marquee-separator">/</span><span class="marquee-word">Application Support</span><span class="marquee-separator">/</span><span class="marquee-word">Systems Support</span><span class="marquee-separator">/</span><span class="marquee-word">System Integration</span><span class="marquee-separator">/</span></div>
+          <div class="marquee-group"><span class="marquee-word">Software Development</span><span class="marquee-separator">/</span><span class="marquee-word">Application Support</span><span class="marquee-separator">/</span><span class="marquee-word">Systems Support</span><span class="marquee-separator">/</span><span class="marquee-word">System Integration</span><span class="marquee-separator">/</span></div>
         </div></div>
         <div class="marquee-row" aria-hidden="true"><div class="marquee-track marquee-track--reverse">
-          <div class="marquee-group"><span class="marquee-word">Build Faster</span><span class="marquee-separator">/</span><span class="marquee-word">Ship Lighter</span><span class="marquee-separator">/</span><span class="marquee-word">Design Bolder</span><span class="marquee-separator">/</span></div>
-          <div class="marquee-group"><span class="marquee-word">Build Faster</span><span class="marquee-separator">/</span><span class="marquee-word">Ship Lighter</span><span class="marquee-separator">/</span><span class="marquee-word">Design Bolder</span><span class="marquee-separator">/</span></div>
+          <div class="marquee-group"><span class="marquee-word">Issue Resolution</span><span class="marquee-separator">/</span><span class="marquee-word">End-User Support</span><span class="marquee-separator">/</span><span class="marquee-word">Agile Delivery</span><span class="marquee-separator">/</span></div>
+          <div class="marquee-group"><span class="marquee-word">Issue Resolution</span><span class="marquee-separator">/</span><span class="marquee-word">End-User Support</span><span class="marquee-separator">/</span><span class="marquee-word">Agile Delivery</span><span class="marquee-separator">/</span></div>
         </div></div>
       </section>
     </main>
